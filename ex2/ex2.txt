@@ -1,0 +1,16 @@
+Recovery has 3 strategies of dealing with deadblocks: preemption, rollback, and killing processes.
+It is better to use preemption if it is possible to temporarily take a resource away from one process and give it to another one.
+It is better to rollback if it is possible to restart processes or their parts at some timepoint.
+It is better to killing if it is possible to get rid of a process with having other processes working properly and without losing important data.
+It is important to use recovery carefully, because it can lead the system to starvation.
+
+Prevention has 4 stratigies: attacking the mutual exclusion condition, attacking the hold-and-wait condition, attacking the no-preemption condition, attacking the circular wait condition.
+It is better to attack the mutual exclusion condition by avoiding assigning a resource unless it becomes absolutely necessary.
+It is better to attack the hold-and-wait condition in 2 ways:
+1) each process requests all its resources before starting the execution: everything is available -> the process will be allocated its resources, it can run to completeon.
+2) a process requesting some resources releases all resources it has and tries to get everything it needs at once.
+It is better to attack the no-preemption condition if it is possible to take back resources the process uses.
+It is better to attack the circular wait condition if it is possible to make each process can has only a single process at the moment.
+
+It is better to use avoidance if it is possible to determine whether granting a resource is safe (safe -> make allocation).
+
